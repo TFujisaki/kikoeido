@@ -21,10 +21,7 @@ class ViewController: UIViewController {
             self.performSegue(withIdentifier: "toSound", sender: nil)
     }
     
-    //@IBAction func toDrawFromTop(_ sender: UIButton) {
-      //  self.performSegue(withIdentifier: "toSound", sender: nil)
-        
-    //}
+   
     
     @IBAction func toDrawFromTopButtonTapped(_ sender: UIButton) {
         

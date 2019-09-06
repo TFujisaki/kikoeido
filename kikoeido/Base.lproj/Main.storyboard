@@ -58,39 +58,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="音声入力の窓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p82-y0-OGh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音声入力の窓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p82-y0-OGh">
                                 <rect key="frame" x="106" y="35" width="163" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="QZY-mk-BrP"/>
+                                    <constraint firstAttribute="width" constant="163" id="qaK-GM-GuD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02s-8c-HM2">
-                                <rect key="frame" x="101" y="565" width="172" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02s-8c-HM2">
+                                <rect key="frame" x="128.5" y="565" width="118" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="999-pP-1A0"/>
+                                    <constraint firstAttribute="height" constant="82" id="Vr7-5b-KUp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="筆談へ"/>
                                 <connections>
                                     <action selector="toDrawButtonTapped:" destination="c37-dt-RSf" eventType="touchUpInside" id="l4o-5Z-bGb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-I3-2ei">
-                                <rect key="frame" x="291" y="488" width="63" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="録音"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="音声を認識します。録音ボタンをタップして話してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pt6-f6-TdD">
+                                <rect key="frame" x="48" y="171" width="278" height="253"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="46L-fu-L2L"/>
+                                    <constraint firstAttribute="height" constant="253" id="HMH-j6-vJm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-I3-2ei">
+                                <rect key="frame" x="76.5" y="475" width="222" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="2aq-iU-Tk7"/>
+                                    <constraint firstAttribute="width" constant="222" id="ReY-7E-3uB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="録音開始">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="recordButtonTapped:" destination="c37-dt-RSf" eventType="touchUpInside" id="Cmm-Y1-Ar2"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="音声を認識します。録音ボタンをタップして話してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pt6-f6-TdD">
-                                <rect key="frame" x="51" y="171" width="240" height="253"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.97318214178085327" green="0.96820324659347534" blue="0.89790898561477661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="02s-8c-HM2" firstAttribute="top" secondItem="qRa-I3-2ei" secondAttribute="bottom" constant="29" id="3f1-u2-KWg"/>
+                            <constraint firstItem="pt6-f6-TdD" firstAttribute="centerX" secondItem="ojd-wo-yJx" secondAttribute="centerX" id="4qt-zn-SXd"/>
+                            <constraint firstItem="pt6-f6-TdD" firstAttribute="top" secondItem="p82-y0-OGh" secondAttribute="bottom" constant="66" id="7Px-gu-AQe"/>
+                            <constraint firstItem="02s-8c-HM2" firstAttribute="centerX" secondItem="ojd-wo-yJx" secondAttribute="centerX" id="G3c-9O-psJ"/>
+                            <constraint firstItem="qRa-I3-2ei" firstAttribute="centerX" secondItem="ojd-wo-yJx" secondAttribute="centerX" id="Q9e-AP-QtE"/>
+                            <constraint firstItem="p82-y0-OGh" firstAttribute="top" secondItem="KVh-rE-8VV" secondAttribute="top" constant="15" id="btQ-Md-SPE"/>
+                            <constraint firstItem="KVh-rE-8VV" firstAttribute="bottom" secondItem="02s-8c-HM2" secondAttribute="bottom" constant="20" id="fuO-be-NHA"/>
+                            <constraint firstItem="p82-y0-OGh" firstAttribute="centerX" secondItem="ojd-wo-yJx" secondAttribute="centerX" id="hqb-kp-ChR"/>
+                            <constraint firstItem="pt6-f6-TdD" firstAttribute="centerX" secondItem="ojd-wo-yJx" secondAttribute="centerX" id="i7P-om-qix"/>
+                            <constraint firstItem="02s-8c-HM2" firstAttribute="centerX" secondItem="ojd-wo-yJx" secondAttribute="centerX" id="veF-Nh-Jru"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KVh-rE-8VV"/>
                     </view>
                     <connections>
@@ -111,27 +138,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="筆談の窓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVY-b6-r0f">
-                                <rect key="frame" x="132" y="38" width="111" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="筆談の窓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVY-b6-r0f">
+                                <rect key="frame" x="128" y="38" width="119" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="63" id="6Ia-M8-JHb"/>
+                                    <constraint firstAttribute="width" constant="119" id="MEu-wG-7l8"/>
+                                    <constraint firstAttribute="height" constant="63" id="Prl-td-xH9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="119" id="eZV-sy-2eT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsO-Y2-7uP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsO-Y2-7uP">
                                 <rect key="frame" x="41" y="568" width="135" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="rA9-bd-0M9"/>
+                                    <constraint firstAttribute="height" constant="72" id="sVb-gF-n0o"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="音声入力へ"/>
                                 <connections>
                                     <action selector="toSoundButtonTapped:" destination="ZMi-5Y-zyk" eventType="touchUpInside" id="syy-Bb-itb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28l-g9-k5R">
+                                <rect key="frame" x="232" y="582" width="80" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Sb0-gD-XyB"/>
+                                    <constraint firstAttribute="height" constant="58" id="U7e-uG-6Ve"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="消す"/>
+                                <connections>
+                                    <action selector="eraseButtonTapped:" destination="ZMi-5Y-zyk" eventType="touchUpInside" id="JKR-Y3-8yn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bVY-b6-r0f" firstAttribute="top" secondItem="9XJ-Ts-Nnr" secondAttribute="top" constant="18" id="48c-qI-AtG"/>
+                            <constraint firstItem="9XJ-Ts-Nnr" firstAttribute="bottom" secondItem="vsO-Y2-7uP" secondAttribute="bottom" constant="27" id="CNi-E4-Kff"/>
+                            <constraint firstItem="bVY-b6-r0f" firstAttribute="centerX" secondItem="eMo-02-9VV" secondAttribute="centerX" id="E7y-R5-k37"/>
+                            <constraint firstItem="vsO-Y2-7uP" firstAttribute="leading" secondItem="9XJ-Ts-Nnr" secondAttribute="leading" constant="41" id="EaW-fm-QOw"/>
+                            <constraint firstItem="bVY-b6-r0f" firstAttribute="top" secondItem="9XJ-Ts-Nnr" secondAttribute="top" constant="18" id="eY4-Oa-KjI"/>
+                            <constraint firstItem="bVY-b6-r0f" firstAttribute="centerX" secondItem="eMo-02-9VV" secondAttribute="centerX" id="l85-vr-oTd"/>
+                            <constraint firstItem="9XJ-Ts-Nnr" firstAttribute="bottom" secondItem="28l-g9-k5R" secondAttribute="bottom" constant="27" id="tku-mC-6TH"/>
+                            <constraint firstItem="28l-g9-k5R" firstAttribute="leading" secondItem="vsO-Y2-7uP" secondAttribute="trailing" constant="56" id="uOt-J6-RJ7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9XJ-Ts-Nnr"/>
                     </view>
                     <connections>
+                        <outlet property="eraseButton" destination="28l-g9-k5R" id="s3u-FN-5gP"/>
                         <segue destination="c37-dt-RSf" kind="presentation" identifier="toBackSound" id="JvO-zd-k05"/>
                     </connections>
                 </viewController>
@@ -141,7 +199,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pl6-5P-6zI"/>
+        <segue reference="NGC-83-6hv"/>
         <segue reference="JvO-zd-k05"/>
     </inferredMetricsTieBreakers>
 </document>
