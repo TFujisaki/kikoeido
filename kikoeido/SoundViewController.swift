@@ -160,11 +160,5 @@ class SoundViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    
-    
 
 }

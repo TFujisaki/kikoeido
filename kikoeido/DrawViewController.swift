@@ -12,12 +12,7 @@ class DrawViewController: UIViewController {
     
      var drawableView: DrawableView! = nil
     
-    
-    
-    
-    
     @IBOutlet weak var eraseButton: UIButton!
-    
     
     // Constants
     let pointX: Double = 0.0
@@ -27,21 +22,15 @@ class DrawViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
         
         drawableView = nil
         
         if drawableView == nil {
             drawableView = DrawableView(frame: CGRect(x: 0.0, y: 120.0, width: self.view.bounds.width, height: self.view.bounds.height - 250))
             
-            drawableView.backgroundColor = UIColor.yellow
+            drawableView.backgroundColor = UIColor.lightGray
             self.view.addSubview(drawableView)
         }
-
-        
-    
     }
     
 
@@ -150,34 +139,13 @@ class DrawViewController: UIViewController {
     }
     
     
-    
-    
-    
-
-    
-    
     @IBAction func toSoundButtonTapped(_ sender: UIButton) {
-        
-        
         self.performSegue(withIdentifier: "toBackSound", sender: nil)
-        
     }
     
     
     @IBAction func eraseButtonTapped(_ sender: UIButton) {
-        
         self.viewDidLoad()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
  }

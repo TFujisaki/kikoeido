@@ -182,7 +182,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="IiJ-ad-BbI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="消す"/>
+                                <state key="normal" title="消す">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="eraseButtonTapped:" destination="ZMi-5Y-zyk" eventType="touchUpInside" id="JKR-Y3-8yn"/>
                                 </connections>
