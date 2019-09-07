@@ -14,14 +14,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func toSoundTapped(_ sender: UIButton) {
             self.performSegue(withIdentifier: "toSound", sender: nil)
     }
-    
-   
     
     @IBAction func toDrawFromTopButtonTapped(_ sender: UIButton) {
         
