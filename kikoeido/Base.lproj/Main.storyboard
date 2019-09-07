@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,21 +15,27 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="kikoeido" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-TH-lKz">
-                                <rect key="frame" x="90" y="168" width="194" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-TH-lKz">
+                                <rect key="frame" x="36" y="168" width="248" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="XR9-7q-uxd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="194" id="b6O-F9-uEy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="音声文字起こし"/>
                                 <connections>
                                     <action selector="toSoundTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mgr-bD-W3U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO2-Wd-fQH">
-                                <rect key="frame" x="90" y="308" width="194" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xO2-Wd-fQH">
+                                <rect key="frame" x="36" y="308" width="248" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="194" id="H7f-rf-fqF"/>
+                                    <constraint firstAttribute="height" constant="80" id="NKK-xk-HfB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="筆談"/>
                                 <connections>
@@ -38,6 +44,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xO2-Wd-fQH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XPX-Ho-yn2"/>
+                            <constraint firstItem="jDv-TH-lKz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="bWE-RL-k8W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jDv-TH-lKz" secondAttribute="trailing" constant="36" id="qWA-Ak-464"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xO2-Wd-fQH" secondAttribute="trailing" constant="36" id="rR2-WO-5TP"/>
+                            <constraint firstItem="jDv-TH-lKz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="suA-zc-T5c"/>
+                            <constraint firstItem="xO2-Wd-fQH" firstAttribute="top" secondItem="jDv-TH-lKz" secondAttribute="bottom" constant="60" id="zQW-Sb-dN0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -55,23 +69,23 @@
             <objects>
                 <viewController id="c37-dt-RSf" customClass="SoundViewController" customModule="kikoeido" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ojd-wo-yJx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音声入力の窓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p82-y0-OGh">
-                                <rect key="frame" x="106" y="35" width="163" height="70"/>
+                                <rect key="frame" x="78.5" y="35" width="163" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="QZY-mk-BrP"/>
-                                    <constraint firstAttribute="width" constant="163" id="qaK-GM-GuD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="163" id="qaK-GM-GuD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02s-8c-HM2">
-                                <rect key="frame" x="128.5" y="565" width="118" height="82"/>
+                                <rect key="frame" x="101" y="466" width="118" height="82"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="118" id="999-pP-1A0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="999-pP-1A0"/>
                                     <constraint firstAttribute="height" constant="82" id="Vr7-5b-KUp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -80,21 +94,11 @@
                                     <action selector="toDrawButtonTapped:" destination="c37-dt-RSf" eventType="touchUpInside" id="l4o-5Z-bGb"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="音声を認識します。録音ボタンをタップして話してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pt6-f6-TdD">
-                                <rect key="frame" x="48" y="171" width="278" height="253"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="46L-fu-L2L"/>
-                                    <constraint firstAttribute="height" constant="253" id="HMH-j6-vJm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-I3-2ei">
-                                <rect key="frame" x="76.5" y="475" width="222" height="61"/>
+                                <rect key="frame" x="49" y="376" width="222" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="2aq-iU-Tk7"/>
-                                    <constraint firstAttribute="width" constant="222" id="ReY-7E-3uB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="222" id="ReY-7E-3uB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="録音開始">
@@ -104,6 +108,16 @@
                                     <action selector="recordButtonTapped:" destination="c37-dt-RSf" eventType="touchUpInside" id="Cmm-Y1-Ar2"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="音声を認識します。録音ボタンをタップして話してください。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt6-f6-TdD">
+                                <rect key="frame" x="21" y="171" width="278" height="119"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="119" id="hnh-rs-BFQ"/>
+                                    <constraint firstAttribute="width" constant="278" id="tdl-Rb-cnd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.97318214178085327" green="0.96820324659347534" blue="0.89790898561477661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -128,21 +142,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rei-Qg-pd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965.60000000000002" y="24.7376311844078"/>
+            <point key="canvasLocation" x="963.75" y="24.295774647887324"/>
         </scene>
         <!--Draw View Controller-->
         <scene sceneID="QGe-U0-TTY">
             <objects>
                 <viewController id="ZMi-5Y-zyk" customClass="DrawViewController" customModule="kikoeido" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMo-02-9VV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="筆談の窓" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVY-b6-r0f">
-                                <rect key="frame" x="128" y="38" width="119" height="63"/>
+                                <rect key="frame" x="100.5" y="38" width="119" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="63" id="6Ia-M8-JHb"/>
-                                    <constraint firstAttribute="width" constant="119" id="MEu-wG-7l8"/>
                                     <constraint firstAttribute="height" constant="63" id="Prl-td-xH9"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="119" id="eZV-sy-2eT"/>
                                 </constraints>
@@ -151,9 +164,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsO-Y2-7uP">
-                                <rect key="frame" x="41" y="568" width="135" height="72"/>
+                                <rect key="frame" x="41" y="469" width="135" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="rA9-bd-0M9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="rA9-bd-0M9"/>
                                     <constraint firstAttribute="height" constant="72" id="sVb-gF-n0o"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -163,10 +176,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28l-g9-k5R">
-                                <rect key="frame" x="232" y="582" width="80" height="58"/>
+                                <rect key="frame" x="201" y="469" width="80" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Sb0-gD-XyB"/>
-                                    <constraint firstAttribute="height" constant="58" id="U7e-uG-6Ve"/>
+                                    <constraint firstAttribute="height" constant="72" id="Iaq-MU-yQh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="IiJ-ad-BbI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="消す"/>
@@ -177,14 +190,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9XJ-Ts-Nnr" firstAttribute="bottom" secondItem="28l-g9-k5R" secondAttribute="bottom" constant="27" id="2B8-uT-bEM"/>
                             <constraint firstItem="bVY-b6-r0f" firstAttribute="top" secondItem="9XJ-Ts-Nnr" secondAttribute="top" constant="18" id="48c-qI-AtG"/>
+                            <constraint firstItem="9XJ-Ts-Nnr" firstAttribute="trailing" secondItem="28l-g9-k5R" secondAttribute="trailing" constant="39" id="8mb-kQ-qYg"/>
                             <constraint firstItem="9XJ-Ts-Nnr" firstAttribute="bottom" secondItem="vsO-Y2-7uP" secondAttribute="bottom" constant="27" id="CNi-E4-Kff"/>
                             <constraint firstItem="bVY-b6-r0f" firstAttribute="centerX" secondItem="eMo-02-9VV" secondAttribute="centerX" id="E7y-R5-k37"/>
                             <constraint firstItem="vsO-Y2-7uP" firstAttribute="leading" secondItem="9XJ-Ts-Nnr" secondAttribute="leading" constant="41" id="EaW-fm-QOw"/>
                             <constraint firstItem="bVY-b6-r0f" firstAttribute="top" secondItem="9XJ-Ts-Nnr" secondAttribute="top" constant="18" id="eY4-Oa-KjI"/>
+                            <constraint firstItem="28l-g9-k5R" firstAttribute="leading" secondItem="vsO-Y2-7uP" secondAttribute="trailing" constant="25" id="hq9-aV-oi3"/>
                             <constraint firstItem="bVY-b6-r0f" firstAttribute="centerX" secondItem="eMo-02-9VV" secondAttribute="centerX" id="l85-vr-oTd"/>
                             <constraint firstItem="9XJ-Ts-Nnr" firstAttribute="bottom" secondItem="28l-g9-k5R" secondAttribute="bottom" constant="27" id="tku-mC-6TH"/>
-                            <constraint firstItem="28l-g9-k5R" firstAttribute="leading" secondItem="vsO-Y2-7uP" secondAttribute="trailing" constant="56" id="uOt-J6-RJ7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9XJ-Ts-Nnr"/>
                     </view>
@@ -195,11 +210,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ds-AD-ZO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805.60000000000002" y="816.34182908545733"/>
+            <point key="canvasLocation" x="804.375" y="815.49295774647885"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NGC-83-6hv"/>
+        <segue reference="Pl6-5P-6zI"/>
         <segue reference="JvO-zd-k05"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,6 @@ class SoundViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var recordButton: UIButton!
     
-    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     private var recognitionTask: SFSpeechRecognitionTask?
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -26,10 +25,7 @@ class SoundViewController: UIViewController {
     let stRecognitionComplete = "認識を完了する"
     let stInAction = "(認識中…そのまま話し続けてください)"
     
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         recordButton.isEnabled = false
@@ -49,8 +45,6 @@ class SoundViewController: UIViewController {
    
     @IBAction func toDrawButtonTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toDraw", sender: nil)
-        
-        
     }
     
     
@@ -72,8 +66,8 @@ class SoundViewController: UIViewController {
         
         recognitionRequest.shouldReportPartialResults = true
         
-        // guard let inputNode: AVAudioInputNode = audioEngine.inputNode else { fatalError("InputNodeエラー") }
-        let inputNode: AVAudioInputNode = audioEngine.inputNode
+        let inputNode: AVAudioInputNode? = audioEngine.inputNode
+        
         if inputNode == nil {
             fatalError("InputNode Error")
         }
@@ -88,7 +82,7 @@ class SoundViewController: UIViewController {
             
             if error != nil || isFinal {
                 self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
+                inputNode!.removeTap(onBus: 0)
                 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
@@ -99,9 +93,9 @@ class SoundViewController: UIViewController {
             }
         }
         
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        let recordingFormat = inputNode!.outputFormat(forBus: 0)
         
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {
+        inputNode!.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {
             (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             self.recognitionRequest?.append(buffer)
         }
@@ -114,7 +108,6 @@ class SoundViewController: UIViewController {
     
     
     @IBAction func recordButtonTapped(_ sender: UIButton) {
-        
         if audioEngine.isRunning {
             // 音声エンジン動作中なら停止
             audioEngine.stop()
@@ -128,7 +121,6 @@ class SoundViewController: UIViewController {
         try! startRecording()
         recordButton.setTitle(stRecognitionComplete, for: [])
         recordButton.backgroundColor = UIColor.red
-        
     }
     
     
