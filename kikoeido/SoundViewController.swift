@@ -142,6 +142,8 @@ class SoundViewController: UIViewController {
                 case .notDetermined:// 不明
                     self.recordButton.isEnabled = false
                     self.recordButton.setTitle("録音機能が無効", for: .disabled)
+                @unknown default:
+                    print("エラー")
                 }
             }
         }
